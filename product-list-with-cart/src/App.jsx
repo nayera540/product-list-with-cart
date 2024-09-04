@@ -1,6 +1,7 @@
 import {useReducer} from "react";
 import Cart from "./Components/Cart";
 import Desserts from "./Components/Desserts";
+import ConfirmOrder from "./Components/ConfirmOrder";
 
 
 const initialState = {
@@ -24,7 +25,7 @@ function App() {
                 <Desserts />
                 <Cart />
             </div>
-            {}
+            {isOrderConfirmed && <ConfirmOrder />}
         </>
     )
 }
