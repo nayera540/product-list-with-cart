@@ -1,5 +1,8 @@
+/* eslint-disable react/no-unknown-property */
 /* eslint-disable react/prop-types */
-function Dessert({ dessert }) {
+
+
+function Dessert({ dessert, cart, dispatch }) {
     return (
         <div className="dessert">
             <img src={dessert.image.desktop} alt={dessert.name} />
@@ -23,9 +26,11 @@ function Dessert({ dessert }) {
                 </svg>
                 Add to Cart
             </button>
-            <p className="category">{dessert.category}</p>
-            <p className="dessert__name">{dessert.name}</p>
-            <p className="price">${dessert.price.toFixed(2)}</p>
+            <div className="dessert__info">
+                <p className="category">{dessert.category}</p>
+                <p className="dessert__name">{dessert.name}</p>
+                <p className="price">${dessert.price.toFixed(2)}</p>
+            </div>
         </div>
     );
 }
