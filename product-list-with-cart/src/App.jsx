@@ -17,6 +17,47 @@ function reducer(state, action) {
                 cart: [...state.cart, action.payload],
                 quantity: state.quantity + 1,
             };
+        case "increaseQuantity":
+            return {
+                ...state,
+                cart: state.cart.map((item) =>
+                    item.name === action.payload
+                        ? {
+                            ...item,
+                            quantity: item.quantity + 1,
+                            totalPrice: (item.quantity + 1) * item.price,
+                        }
+                        : item
+                ),
+                quantity: state.quantity + 1,
+            };
+        case "decreaseQuantity":
+            return {
+                ...state,
+                cart: state.cart.map((item) =>
+                    item.name === action.payload
+                        ? {
+                            ...item,
+                            quantity: item.quantity > 1? item.quantity - 1: 0,
+                            totalPrice: (item.quantity - 1) * item.price,
+                        }
+                        : item
+                ).filter(item => item.quantity > 0),
+                quantity: state.quantity - 1,
+            };
+        case "removeItem":
+            return {
+                ...state,
+                cart: state.cart.filter(item => item.name !== action.payload.name),
+                quantity: state.quantity - action.payload.quantity,
+            };
+        case "confirmOrder":
+            return {
+                ...state,
+                isOrderConfirmed: true,
+            };
+        case "newOrder":
+            return {};
         default:
             throw new Error("Something went wrong");
     }

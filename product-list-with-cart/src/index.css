@@ -254,3 +254,51 @@ body{
     cursor: pointer;
     background-color: hsl(14deg 57.93% 38.98%)
 }
+
+/* added item styling */
+
+.btn-add{
+    transition: 0.4s;
+}
+
+.btn-added{
+    justify-content: space-between;
+    padding: 0 10px;
+    background-color: var(--red);
+    color: #fff;
+    font-weight: 600;
+    align-items: center;
+}
+
+.btn_control{
+    background-color: transparent;
+    border: none;
+    outline: none;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    text-align: center;
+    transition: 0.4s;
+}
+
+
+.btn-decrement,
+.btn_increment {
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+}
+
+.btn-decrement svg,
+.btn_increment svg {
+    vertical-align: middle; 
+    margin: 0; 
+}
+
+.btn_control:hover, .btn_control:hover svg path{
+    cursor: pointer;
+    background-color: #fff;
+    fill: var(--red)
+}
+

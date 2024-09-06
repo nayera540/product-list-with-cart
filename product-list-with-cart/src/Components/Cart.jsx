@@ -41,7 +41,7 @@ function Cart({ dispatch, cart, quantity }) {
                             This is a <span className="carbon">carbon-neutral</span> delivery
                         </p>
                     </div>
-                    <button className="btn_confirm">Confirm Order</button>
+                    <button className="btn_confirm" onClick={() => dispatch({type: "confirmOrder"})}>Confirm Order</button>
                 </>
             ) : (
                 <div className="empty__container">
