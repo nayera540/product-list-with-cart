@@ -1,7 +1,6 @@
 import desserts from '../../public/assets/data.json';
 import Dessert from './Dessert';
 
-console.log(desserts);
 
 
 function Desserts({dispatch, cart}) {

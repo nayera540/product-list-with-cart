@@ -38,7 +38,7 @@ body{
     margin-bottom: 1.5rem;
 } 
 
-.cart__container p{
+.empty__container p{
     font-size: 14px;
     text-align: center;
     color: var(--rose-500);
@@ -134,4 +134,123 @@ body{
 .dessert:hover img{
     transform: scale(1.08);
     cursor: pointer; 
+}
+
+/* cartItem styling */
+
+.cart__item{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 1.5rem;
+    margin-top: 1rem;
+    border-bottom: 1px solid var(--rose-100);
+}
+
+.item__header p{
+    color: var(--rose-900) !important;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.item__details{
+    display: flex;
+    gap: 0.8rem;
+}
+
+.quantity{
+    color: var(--red);
+    font-weight: 600;
+}
+
+.item__price{
+    color: var(--rose-500);
+}
+
+.item__totalprice{
+    color: var(--rose-500);
+    font-weight: 600;
+}
+
+.btn_remove{
+    height: 23px;
+    width: 23px;
+    border: none;
+    outline: none;
+    background: transparent;
+    border: 1px solid var(--rose-400);
+    border-radius: 50%;
+    margin-top: 0.5rem;
+    transition: 0.4s;
+}
+
+.btn_remove svg{
+    transition: 0.10s;
+}
+
+.btn_remove:hover{
+    border-color: #000;
+    cursor: pointer;
+}
+.btn_remove:hover svg path {
+    fill: #000; 
+    cursor: pointer;
+}
+
+/* cart styling */
+
+.cart__total{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 1.5rem 0;
+    align-items: center;
+}
+
+.cart__total > p{
+    color: var(--rose-900);
+}
+
+.totalOrder{
+    color: var(--rose-900);
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.delivery{
+    background-color: var(--rose-50);
+    padding: 0.8rem 2rem;
+    text-align: center;
+    border-radius: 10px;
+    color: var(--rose-900);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.delivery svg{
+    margin-right: 0.5rem;
+}
+
+.carbon{
+    font-weight: 600;
+}
+
+.btn_confirm{
+    border: none;
+    outline: none;
+    background-color: var(--red);
+    width: 100%;
+    padding: 0.8rem 0;
+    color: #fff;
+    font-weight: 500;
+    border-radius: 30px;
+    transition: 0.4s;
+}
+
+.btn_confirm:hover{
+    cursor: pointer;
+    background-color: hsl(14deg 57.93% 38.98%)
 }

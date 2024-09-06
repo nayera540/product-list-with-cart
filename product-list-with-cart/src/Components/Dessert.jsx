@@ -1,12 +1,25 @@
 /* eslint-disable react/no-unknown-property */
 /* eslint-disable react/prop-types */
 
-
 function Dessert({ dessert, cart, dispatch }) {
     return (
         <div className="dessert">
             <img src={dessert.image.desktop} alt={dessert.name} />
-            <button className="btn btn-add">
+            <button
+                className="btn btn-add"
+                onClick={() =>
+                    dispatch({
+                        type: "addToCart",
+                        payload: {
+                            name: dessert.name,
+                            quantity: 1,
+                            price: dessert.price,
+                            image: dessert.image.thumbnail,
+                            totalPrice: dessert.price,
+                        },
+                    })
+                }
+            >
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="21"
