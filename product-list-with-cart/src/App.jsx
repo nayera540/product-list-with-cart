@@ -38,7 +38,7 @@ function reducer(state, action) {
                     item.name === action.payload
                         ? {
                             ...item,
-                            quantity: item.quantity > 1? item.quantity - 1: 0,
+                            quantity: item.quantity > 1 ? item.quantity - 1 : 0,
                             totalPrice: (item.quantity - 1) * item.price,
                         }
                         : item
@@ -57,7 +57,11 @@ function reducer(state, action) {
                 isOrderConfirmed: true,
             };
         case "newOrder":
-            return {};
+            return {
+                ...initialState,
+                quantity: 0,
+                isOrderConfirmed: false,
+            };
         default:
             throw new Error("Something went wrong");
     }
@@ -75,7 +79,7 @@ function App() {
                 <Desserts dispatch={dispatch} cart={cart} />
                 <Cart dispatch={dispatch} quantity={quantity} cart={cart} />
             </div>
-            {isOrderConfirmed && <ConfirmOrder />}
+            {isOrderConfirmed && <ConfirmOrder dispatch={dispatch} cart={cart} />}
         </>
     );
 }

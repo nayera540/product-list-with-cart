@@ -3,6 +3,10 @@ import CartItem from "./CartItem";
 function Cart({ dispatch, cart, quantity }) {
     const totalCartPrice = cart.reduce((acc, item) => acc + item.totalPrice, 0);
 
+    function handleConfirmOrder() {
+        dispatch({ type: "confirmOrder" });
+    }
+
     return (
         <div className="cart__container">
             <h1 className="cart__header">Your Cart ({quantity ? quantity : 0})</h1>
@@ -41,7 +45,7 @@ function Cart({ dispatch, cart, quantity }) {
                             This is a <span className="carbon">carbon-neutral</span> delivery
                         </p>
                     </div>
-                    <button className="btn_confirm" onClick={() => dispatch({type: "confirmOrder"})}>Confirm Order</button>
+                    <button className="btn_confirm" onClick={handleConfirmOrder}>Confirm Order</button>
                 </>
             ) : (
                 <div className="empty__container">
