@@ -408,3 +408,6 @@ body{
 
 
 
+.selected{
+    border: 2px solid var(--red);
+}

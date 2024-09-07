@@ -8,7 +8,7 @@ function Dessert({ dessert, cart, dispatch }) {
 
     return (
         <div className="dessert">
-            <img src={dessert.image.desktop} alt={dessert.name} />
+            <img src={dessert.image.desktop} alt={dessert.name} className={isItemAdded? "selected" : " "}/>
             {isItemAdded ? (
                 <div className="btn btn-added">
                     <button
