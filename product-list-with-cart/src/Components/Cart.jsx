@@ -50,7 +50,7 @@ function Cart({ dispatch, cart, quantity }) {
             ) : (
                 <div className="empty__container">
                     <img
-                        src="../../public/assets/images/illustration-empty-cart.svg"
+                        src="assets/images/illustration-empty-cart.svg"
                         alt="empty_cart"
                     />
                     <p>Your added items will appear here</p>
